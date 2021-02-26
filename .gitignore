@@ -1,1 +1,15 @@
 *.swp
+*.o
+examples/crawler
+examples/dns
+examples/http
+examples/httpd
+examples/miniterm
+examples/mqtt
+examples/process
+examples/shell
+examples/ssl
+examples/stdio
+examples/timer
+examples/udpechoserver
+examples/wget
