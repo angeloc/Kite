@@ -265,7 +265,7 @@ void SecureSocket::connect(const std::string &hostname, int port, uint64_t timeo
         SSL_set_mode(p->ssl, SSL_MODE_AUTO_RETRY);
     }
     BIO_set_conn_hostname(p->bio, hostname.c_str());
-    BIO_set_conn_int_port(p->bio, &port);
+    BIO_set_conn_port(p->bio, &port);
 
     p->d_connect();
 }
