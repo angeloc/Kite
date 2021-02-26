@@ -1,7 +1,8 @@
 THIS := $(dir $(lastword $(MAKEFILE_LIST)))
 
-CXXFLAGS += -flto -std=c++11 -I$(THIS)
-LDFLAGS  += -flto -lpthread -lssl -lcrypto
+PKG_CONFIG ?= pkg-config
+CXXFLAGS += -flto -std=c++11 -I$(THIS) -I
+LDFLAGS  += $(shell $(PKG_CONFIG) --static --libs openssl)
 
 SOURCES += \
 	$(THIS)3rdparty/http-parser/http_parser.c \
