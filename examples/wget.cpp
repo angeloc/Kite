@@ -16,7 +16,7 @@ public:
     {
         d_content_length = 0;
         d_progress = 0;
-        setCaFile("/etc/ssl/cert.pem");
+        setCaDir("/etc/ssl/certs");
     }
 
     void get(const std::string &url)
