@@ -1,16 +1,30 @@
 include ../Makefile.in
 
-OBJECTS := $(patsubst %.cpp,%.o,$(SOURCES))
-
 CXXFLAGS += -g
-LDFLAGS += -g
 
-ALL: dns.exe httpd.exe timer.exe ssl.exe stdio.exe mqtt.exe udpechoserver.exe http.exe process.exe shell.exe wget.exe miniterm.exe crawler.exe
-#mqttsnss.exe
+BINARIES = \
+	   dns \
+	   httpd \
+	   timer \
+	   ssl \
+	   stdio \
+	   mqtt \
+	   udpechoserver \
+	   http \
+	   process \
+	   shell \
+	   wget \
+	   miniterm \
+	   crawler
 
-%.exe: $(OBJECTS) %.o
-	$(CXX) $^ -o $@ $(LDFLAGS)
+.PHONY: all
+all: $(BINARIES)
+
+%.o: $(SOURCES)
+	$(CXX) $(CXXFLAGS) -c $* -o $@ $(LDFLAGS)
+
+$(BINARIES): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $^ $@.cpp -o $@ $(LDFLAGS)
 
 clean:
-	rm -f  ../*.o *.o *.exe
-
+	rm -f  ../*.o *.o $(BINARIES)
