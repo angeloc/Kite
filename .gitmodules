@@ -9,10 +9,10 @@
 	url = https://github.com/r-lyeh/dessert.git
 [submodule "afunix_polyfill"]
 	path = 3rdparty/afunix_polyfill
-	url = https://github.com/aep/afunix_polyfill.git
+	url = https://github.com/angeloc/afunix_polyfill.git
 [submodule "htmlstream"]
 	path = 3rdparty/htmlstream
-	url = https://github.com/aep/htmlstream.git
+	url = https://github.com/angeloc/htmlstream.git
 [submodule "http-parser"]
 	path = http-parser
 	url = https://github.com/nodejs/http-parser.git
