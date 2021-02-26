@@ -23,3 +23,7 @@ SOURCES += \
 	$(THIS)UdpServer.cpp \
 	$(THIS)Unixbus.cpp \
 
+OBJECTS_CPP := $(patsubst %.cpp,%.cpp.o,$(SOURCES))
+OBJECTS_C += $(patsubst %.c,%.c.o,$(SOURCES))
+OBJECTS += $(filter %.o,$(OBJECTS_CPP))
+OBJECTS += $(filter %.o,$(OBJECTS_C))
