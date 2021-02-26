@@ -308,7 +308,7 @@ public:
             cb(status, responseCode, body);
         }
         //TODO: what if ev is dead?
-        ev().lock()->deleteLater(this);
+        ev()->deleteLater(this);
     }
 };
 

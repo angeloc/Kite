@@ -30,7 +30,7 @@ namespace Kite  {
                 Scope *scope,
                 const char *name = "later");
 
-        inline std::weak_ptr<EventLoop> ev() const { return p_Ev;}
+        inline std::shared_ptr<EventLoop> ev() const { return p_Ev.lock(); }
 
     protected:
         void evAdd(int fd, int events = Read);

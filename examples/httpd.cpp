@@ -107,7 +107,7 @@ LazerSharks::Handle::~Handle()
 
 void LazerSharks::Handle::onClosing()
 {
-    ev().lock()->deleteLater(this);
+    ev()->deleteLater(this);
 }
 
 

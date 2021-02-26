@@ -375,7 +375,7 @@ void SecureSocket::flush()
     BIO_flush(p->bio);
 }
 
-std::weak_ptr<EventLoop> SecureSocket::ev()
+std::shared_ptr<EventLoop> SecureSocket::ev()
 {
     return p->Evented::ev();
 }

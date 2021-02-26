@@ -46,7 +46,7 @@ namespace Kite {
         virtual void onConnected(){}
         virtual void onDisconnected(SocketState state){}
 
-        std::weak_ptr<EventLoop> ev();
+        std::shared_ptr<EventLoop> ev();
     private:
         friend class SecureSocketPrivate;
         SecureSocketPrivate *p;

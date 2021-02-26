@@ -46,7 +46,7 @@ namespace Kite {
          */
         virtual bool onExpired(){return false;}
 
-        inline std::weak_ptr<EventLoop> ev() const { return p_ev;}
+        inline std::shared_ptr<EventLoop> ev() const { return p_ev.lock();}
     protected:
         uint64_t p_period_intent;
     private:

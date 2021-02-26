@@ -85,7 +85,7 @@ protected:
     }
     virtual void onFinished(Kite::HttpClient::Status status, int exitCode, const std::string& body) override
     {
-        ev().lock()->exit(0);
+        ev()->exit(0);
         fprintf(stderr, "\n> done. exitCode: %d, errorMessage: %s\n", exitCode, errorMessage().c_str());
     }
 

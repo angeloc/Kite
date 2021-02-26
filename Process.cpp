@@ -153,7 +153,7 @@ protected:
             buffer += std::string(buf,len);
         }
 
-        ev().lock()->exit(0);
+        ev()->exit(0);
         return;
     }
 

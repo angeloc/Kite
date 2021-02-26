@@ -221,7 +221,7 @@ void MqttClient::onActivated(int)
         //TODO
         fprintf(stderr, "ssl read error: %d\n", r);
 
-        ev().lock()->exit(0);
+        ev()->exit(0);
         return;
     }
     p->buffer.resize(osize + r);

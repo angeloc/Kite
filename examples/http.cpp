@@ -20,7 +20,7 @@ protected:
         std::cerr << responseCode << std::endl;
         std::cerr << body;
 
-        ev().lock()->exit(9);
+        ev()->exit(9);
     }
 };
 
