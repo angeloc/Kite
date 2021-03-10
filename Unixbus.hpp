@@ -8,7 +8,7 @@
 namespace Kite {
     class Unixbus : public Kite::File {
     public:
-        Unixbus(std::weak_ptr<EventLoop> ev);
+        Unixbus(const std::weak_ptr<EventLoop> &ev);
         ~Unixbus();
 
         static bool invoke(const std::string &path, const std::string &data);
