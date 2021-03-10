@@ -15,7 +15,8 @@ BINARIES = \
 	   shell \
 	   wget \
 	   miniterm \
-	   crawler
+	   crawler \
+	   publish_subscribe
 
 .PHONY: all
 all: $(BINARIES)

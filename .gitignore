@@ -13,3 +13,4 @@ examples/stdio
 examples/timer
 examples/udpechoserver
 examples/wget
+examples/publish_subscribe
