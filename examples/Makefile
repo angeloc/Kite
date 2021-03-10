@@ -27,4 +27,4 @@ $(BINARIES): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ $@.cpp -o $@ $(LDFLAGS)
 
 clean:
-	rm -f  ../*.o *.o $(BINARIES)
+	rm -f  $(OBJECTS) *.o $(BINARIES)
