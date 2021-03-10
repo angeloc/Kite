@@ -4,7 +4,7 @@
 
 using namespace Kite;
 
-Unixbus::Unixbus(std::weak_ptr<EventLoop> ev)
+Unixbus::Unixbus(const std::weak_ptr<EventLoop> &ev)
     : File(ev)
 {
     int fd = afunix_socket(0);
@@ -77,7 +77,7 @@ void Unixbus::onActivated(int fd, int e)
     char buf[AFUNIX_MAX_PACKAGE_SIZE];
     int address;
     int r = afunix_recvfrom(d_fd, &buf, AFUNIX_MAX_PACKAGE_SIZE, MSG_DONTWAIT, &address);
-    if (r <  1) {
+    if (r < 1) {
         close();
         return;
     }
